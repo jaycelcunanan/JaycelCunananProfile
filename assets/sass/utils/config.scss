@@ -1,0 +1,20 @@
+/** 
+ * Declare Variables
+ */
+
+// Colors
+$bg-main: #1D1D1D;
+$color-primary: #08FDD8;
+$color-secondary: #181818;
+$color-gray-light: #8D8D8D;
+$color-gray: #2B2B2B;
+$color-black: #000000;
+$color-white: #ffffff;
+
+// Fonts
+$font-primary: 'SalsaRegular';
+$font-secondary: 'RobotoRegular';
+
+//Enqueue Fonts
+@include font-face-ttf($font-primary, '../fonts/', 'SalsaRegular');
+@include font-face-ttf($font-secondary, '../fonts/', 'RobotoRegular');

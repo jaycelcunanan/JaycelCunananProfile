@@ -1,0 +1,159 @@
+#logo {
+    background-color: $color-black;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    
+    @include respond-to('md-down') {
+        width: 100px;
+        // height: 100px;
+        padding: 0px 20px;
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.logo {
+    z-index: 10;
+    &__img {
+        font-size: 30px;
+    }
+    &__name {
+        font-size: 18px;
+
+        @include respond-to('md-down') {
+            display: none;
+        }
+    }
+    &__position {
+        font-size: 14px;
+
+        @include respond-to('md-down') {
+            display: none;
+        }
+    } 
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $color-secondary;
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999999999;
+
+    @include respond-to('md-down') {
+        height: 60px;
+        width: 100%;
+        padding: 0px 20px;
+        flex-direction: row;
+    }
+
+    &__links {
+        @include respond-to('md-down') {
+            display: flex;
+            align-items: center;
+        }
+
+        &-toggle {
+            display: none;
+            
+            @include respond-to('md-down') {
+                display: flex;
+            }
+        }
+
+        &-inner {
+            @include respond-to('md-down') {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                transform: translate(100%, 100%);
+                opacity: 0;
+                visibility: hidden;
+                background-color: $color-secondary;
+                border-top: 1px solid rgba($color-white, 0.1);
+                width: 100%;
+                z-index: 1;
+                transition: 
+                    transform 300ms ease,
+                    opacity 400ms ease;
+            }
+
+            &.active {
+                @include respond-to('md-down') {
+                    transform: translate(0, 100%);
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+
+        &-item {
+            a {
+                display: block;
+                font-family: $font-secondary;
+                font-size: 18px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                text-align: center;
+                padding: 6px 10px;
+                border-bottom: 1px solid rgba($color-white, 0.1);
+                transition: all 300ms ease;
+
+                &:hover {
+                    color: $color-primary;
+                }
+            }
+
+            
+
+            &:last-child {
+                a {
+                    border-bottom: 0px;
+                }
+            }
+        }
+    }
+
+
+    &__social {
+        padding-bottom: 60px;
+
+        @include respond-to('md-down') {
+            display: none;
+        }
+    }
+}
+
+.burger-menu {
+    cursor: pointer;
+    display: inline-block;
+
+    .bar1, .bar2, .bar3 {
+        width: 28px;
+        height: 3px;
+        background-color: #FFF;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    &.active {
+        .bar1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        
+        .bar2 {
+            opacity: 0;
+        }
+
+        .bar3 {
+            transform: rotate(45deg) translate(-7px, -8px);
+        }
+    }
+}

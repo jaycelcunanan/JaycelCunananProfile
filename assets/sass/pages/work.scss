@@ -1,0 +1,35 @@
+.portfolio-card {
+    &.featured {
+        width: 100%!important;
+        margin: 0!important;
+        min-height: 400px;
+    }
+}
+
+.work {
+
+    &__header {
+        margin-bottom: 15px;
+
+        @include respond-to('md-down') {
+            flex-direction: column;
+        }
+    }
+
+    &__hero {
+        @include respond-to('md-down') {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__featured {
+        padding: 0px 16px;
+
+        @include respond-to('md-down') {
+            width: 100%;
+            padding: 0px;
+        }
+    }
+    
+}

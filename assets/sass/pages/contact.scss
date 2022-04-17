@@ -1,0 +1,25 @@
+.contact {
+    &__form {
+        display: flex;
+        flex-wrap:wrap;
+        gap: 20px;
+
+        .form-item {
+            width: calc(50% - 10px);
+
+            &.w-100 {
+                width: 100%;
+            }
+        }
+        
+        &-message {
+            min-height: 200px;
+        }
+
+        &-submit {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+
